@@ -122,20 +122,19 @@ h3{ font-family:sans-serif; text-align:center; margin:30px;}
   }
 }
 /* Style */
-pre.prettyprint {
-  background: #161b1d;
-  color: #516d7b;
-  font-family: Menlo, Consolas, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, monospace;
-  font-size: 12px;
-  line-height: 1.5;
-  border: 1px solid #161b1d;
-  padding: 10px;
-  /* border-radius: 3px; */
-}
 
+pre.prettyprint {
+    background: #2b2b2b;
+    color: #516d7b;
+    font-family: Menlo, Consolas, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    border: 1px solid #2b2b2b;
+    padding: 10px;
+    /* border-radius: 3px; */
+}
 /* Specify class=linenums on a pre to get line numbering */
 ol.linenums {
   margin-top: 0;
   margin-bottom: 0;
 }
-

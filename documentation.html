@@ -14,19 +14,22 @@
     <script src="https://cdnjs.com/libraries/prettify"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./dist/jquery.json-editor.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Home</title>
     <link href="css/menu.css" rel="stylesheet">
-    <link href="css/menu.scss" rel="stylesheet">
     <link href="css/code.css" rel="stylesheet">
+    <style>
+        .jumbotron {
+        padding: 1rem 1rem;
+        }
+    </style>
 </head>
 
 
-<body>
-
-
+<body onload="PR.prettyPrint()">
 
 
 
@@ -50,27 +53,68 @@
     </nav>
     
 
-        
+    <section id="home">
+        <div class="container-fluid" style="padding: 0 !important;padding-right: 0;padding-left: 0;">
+            <div class="container-fluid" style="padding-top: 50px; padding-bottom: 50px;">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="container " style="padding-bottom : 30px;">
+                            <div class="list-group shadow" bg-warning mb-3 >
+                            <a href="#" class="list-group-item list-group-item-dark bg-secondary text-white"><i class="fa fa-key"></i> <span style = 'margin-right:2.0em;'> Generate Key</span></a>
+                            <a class="list-group-item text-dark" href="pricing.html"><i class=" text-secondary"></i> <span>API Access Key</span></a>
+                            <a href="#" class="list-group-item text-dark"><i class="text-secondary"></i> <span>API Response</span></a>
+                            <a href="#" class="list-group-item text-dark"><i class="text-secondary"></i> <span>Available Endpoints</span></a>
+                            <a href="documentation.html" class="list-group-item text-dark"><i class="text-secondary"></i> <span>Connecting via HTTPS</span></a>
+                            <a href="#" class="list-group-item text-dark"><i class="text-secondary"></i> <span>Error Codes</span></a>
+                            </div>
+                        </div>
+                        <div class="container " style="padding-bottom : 30px;">
+                            <div class="list-group shadow" bg-warning mb-3 >
+                                <a href="#" class="list-group-item text-dark "><i class="text-secondary"></i><span>Standard Lookup</span></a>
+                                <a class="list-group-item text-dark" href="pricing.html"><i class="text-secondary"></i><span>Response Object</span></a>
+                            </div>
+                        </div>
+                        <div class="container "style="padding-bottom : 30px;">
+                            <div class="list-group shadow" bg-warning mb-3 >
+                                <a href="#" class="list-group-item text-dark "><i class="text-secondary"></i><span>Javascript (jQuery, ajax)</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 "style="padding-right:0px;">
+                        <div class="jumbotron jumbotron-fluid shadow-sm " style="padding-bottom: 10px;" >
+                            <div class="container ">
+                                <h2 class="display-5 text-secondary" style = "padding-bottom: 1rem;" >City by lat-long API</h2>
+                                <p class="lead ">
+                                    CBLL offers a powerful, real-time Lat-long to geolocation API capable of looking up accurate location data of nearest city. Results are delivered within milliseconds in JSON format. Using the CBLL API you will be able to get nearest city data to map down in BI applications.
+                                    <br>
+                                    This documentation outlines in detail API features, available options and integration guide.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="jumbotron jumbotron-fluid shadow-sm " style="padding-bottom: 50px;" >
+                            <div class="container ">
+                                <h2 class="display-5 text-secondary" style = "padding-bottom: 1rem;" >Getting Started</h2>
+                                <h5 class="display-5 text-secondary">API Access Key</h5>
+    
+                                <p class="lead ">Your API Access Key is your unique authentication key used to gain access to the CBLL API. In order to authenticate with the API, append the <code>access_key</code> parameter to the API's base URL and set it to your access key value.
+                                </p>
+                            </div>
 
+                            <div class='container'>
+                                <pre class="prettyprint lang-scm">/https://api.citybylatlong.com/134.201.250.155 ? access_key = YOUR_ACCESS_KEY</pre>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 <section id="home">
     <div class="container-fluid" style="padding: 0 !important;padding-right: 0;padding-left: 0;">
         <pre id="json-display"></pre>
-
-
-        <div class="container col-lg-12 col-mg-12 col-12 py-5">
-            <h1 class="display-4 text-secondary" >Map 250+ Cities in India</h1><hr>
-
-            <p class="lead ">
-                <li class = "text-secondary">Nearest city location from Lat-Long coordinates</li>
-                <li class = "text-secondary">State, District level information of city</li>
-                <li class = "text-secondary">Primary and secondary languages spoken in city</li>
-                <li class = "text-secondary">Geo-Map Coordinates of the city to map</li>
-                <li class = "text-secondary">Rapid and secure data transfer API</li>
-            </p>
-        </div>
-
 
         <script type="text/javascript">
             function getJson() {
@@ -89,32 +133,11 @@
         </script>
 
 
-
     <section>
-    <h3>Google prettify Example</h3>
         <div class='box'>
-                <pre class="prettyprint lang-js">
-        var _html = 'Here goes your html structure';
-
-        $('#some-element').lightbox({
-        zIndex:99999,
-        background:'background-color:rgba(0,0,0,.8);',
-        time:300,
-        width:300,
-        type:'html',
-        contentHtml:_html
-        });</pre>
+                <pre class="prettyprint lang-scm">/https://api.ipstack.com/134.201.250.155 ? access_key = YOUR_ACCESS_KEY</pre>
         </div>
-
-        </section>
-
-        <script>
-            jQuery(document).ready(
-                function()
-                {
-                    prettyPrint();
-            });
-        </script>
+    </section>
 
     </div>
 </section>
