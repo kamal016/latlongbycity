@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" id="bootstrap-css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.com/libraries/prettify"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./dist/jquery.json-editor.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Home</title>
+    <link href="css/menu.css" rel="stylesheet">
+    <link href="css/menu.scss" rel="stylesheet">
+    <link href="css/code.css" rel="stylesheet">
+</head>
+
+
+<body>
+
+
+
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="home.html"><i class="fa fa-compass"></i> <b class = "text-secondary"> City By LatLong</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">FAQs</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    
+
+        
+
+
+
+<section id="home">
+    <div class="container-fluid" style="padding: 0 !important;padding-right: 0;padding-left: 0;">
+        <pre id="json-display"></pre>
+
+
+        <div class="container col-lg-12 col-mg-12 col-12 py-5">
+            <h1 class="display-4 text-secondary" >Map 250+ Cities in India</h1><hr>
+
+            <p class="lead ">
+                <li class = "text-secondary">Nearest city location from Lat-Long coordinates</li>
+                <li class = "text-secondary">State, District level information of city</li>
+                <li class = "text-secondary">Primary and secondary languages spoken in city</li>
+                <li class = "text-secondary">Geo-Map Coordinates of the city to map</li>
+                <li class = "text-secondary">Rapid and secure data transfer API</li>
+            </p>
+        </div>
+
+
+        <script type="text/javascript">
+            function getJson() {
+                // have to use jquery here to get json object from rest api.
+                try {
+                    // return JSON.parse($('#json-input').val());
+                    return JSON.parse('{"name" : "kamal"}')
+                } catch (ex) {
+                    alert('Wrong JSON Format: ' + ex);
+                }
+            }
+            var editor = new JsonEditor('#json-display', getJson());
+            $(document).ready(function () {
+                editor.load(getJson());
+            });
+        </script>
+
+
+
+    <section>
+    <h3>Google prettify Example</h3>
+        <div class='box'>
+                <pre class="prettyprint lang-js">
+        var _html = 'Here goes your html structure';
+
+        $('#some-element').lightbox({
+        zIndex:99999,
+        background:'background-color:rgba(0,0,0,.8);',
+        time:300,
+        width:300,
+        type:'html',
+        contentHtml:_html
+        });</pre>
+        </div>
+
+        </section>
+
+        <script>
+            jQuery(document).ready(
+                function()
+                {
+                    prettyPrint();
+            });
+        </script>
+
+    </div>
+</section>
+</body>
+
